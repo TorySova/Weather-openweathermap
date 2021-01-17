@@ -1,12 +1,13 @@
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
 import {weatherReducer} from "./weatherReducer";
+import thunkMiddleware from 'redux-thunk';
 
 const reducers = combineReducers({
-    profile: weatherReducer,
+    weather: weatherReducer,
 
 });
 
-const store = createStore(reducers);
+const store = createStore(reducers, applyMiddleware(thunkMiddleware));
 
 export default store
 
