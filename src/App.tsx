@@ -5,10 +5,11 @@ import { Weather } from './components/Weather';
 const App = () => {
   const data = new Date().toLocaleTimeString()
   return (
-    <div className="App">
+    <div className="App">      
       {
-        data >= '9' || data < '18'
-          ? <div className='day'><Weather /></div>
+        data >= '9:00:00' && data <= '18:00:00'
+          ? <div className='day'>
+            <Weather /></div>
           : <div className='night'><Weather /></div>
       }
     </div>
