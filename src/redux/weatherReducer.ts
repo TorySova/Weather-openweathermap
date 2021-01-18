@@ -91,21 +91,36 @@ export const weatherReducer = (state = initState, action: actionType): initState
                 data: action.newData
             }
         }
+        case 'SEARCH/ERROR': {
+            return {
+                ...state,
+                error: action.error
+            }
+
+        }
         default: return state;
     }
 };
 
-export type actionType = ReturnType<typeof weatherAC>
+export type actionType = ReturnType<typeof weatherAC> | ReturnType<typeof errorAC>
 
 export const weatherAC = (newData: any) => ({
     type: 'SET_CITY_NAME',
     newData
+} as const);
+export const errorAC = (error: string) => ({
+    type: 'SEARCH/ERROR',
+    error
 } as const);
 
 export const weatherTC = (searchName: string) => (dispatch: Dispatch) => {
     return WeatherAPI.searchCity(searchName)
         .then((res) => {
             dispatch(weatherAC(res.data))
+        })
+        .catch(() => {
+            dispatch(errorAC('Ой! Похоже ты ввел неправильное название города'));
+            
         })
 
 }
