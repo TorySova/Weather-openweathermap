@@ -117,6 +117,7 @@ export const weatherTC = (searchName: string) => (dispatch: Dispatch) => {
     return WeatherAPI.searchCity(searchName)
         .then((res) => {
             dispatch(weatherAC(res.data))
+            dispatch(errorAC(''))
         })
         .catch(() => {
             dispatch(errorAC('Ой! Похоже ты ввел неправильное название города'));

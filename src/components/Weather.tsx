@@ -7,12 +7,12 @@ import search from '../common/—Pngtree—search vector icon_4017384.png'
 import pngwing from '../common/pngwing.com.png'
 
 export const Weather = () => {
-    const [date, setDate] = useState<Date>();
-    useEffect(() => {
-        setInterval(() => {
-            setDate(new Date())
-        }, 1000)
-    }, [])
+    // const [date, setDate] = useState<Date>();
+    // useEffect(() => {
+    //     setInterval(() => {
+    //         setDate(new Date())
+    //     }, 1000)
+    // }, [])
 
     const dispatch = useDispatch()
     const [searchName, setSearchName] = useState<string>('')
