@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div className="App">      
       {
-        data >= '9:00:00' && data <= '18:00:00'
+         data < '18'
           ? <div className='day'>
             <Weather /></div>
           : <div className='night'><Weather /></div>
