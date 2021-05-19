@@ -11,7 +11,7 @@ export const DataWeather = () => {
     const description = useSelector<AppStoreType, string[]>(store => store.weather.data.weather.map(it => it.description))
     return (
         <div className={s.weatherWrap}>
-            {!cityName && !error ? <div className={s.cityName}>Узнай погоду!</div>: null}
+            {!cityName && !error ? <div className={s.cityName}>Узнай погоду в твоем городе!</div>: null}
             
             {error ? <div className={s.error}>{error}</div>  : <div>
                 <div className={s.cityName}>{cityName}</div>

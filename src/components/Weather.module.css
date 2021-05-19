@@ -59,3 +59,23 @@
     justify-content: center;
     height: 100%;
 }
+
+@media screen and (max-width: 420px) {
+    .logo img{
+        width: 50px;
+        color: white;
+    }
+    .logo{
+        margin-top: 20px;
+        font-size: 10px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .searchWrap{
+        display: flex;
+        align-items: center;
+       
+        justify-content: space-between;
+        flex-direction: column;   
+    }
+}
